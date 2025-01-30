@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Tiny5", sans-serif;
+  background-image: url("/imagem/fundo calculadora.img");
+  font-family: "Press Start 2P", system-ui;
+}
+
+main {
+  color: white;
+  //border: rgb(80, 90, 253) solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 2.5rem;
+  background-color: rgba(0, 123, 255, 0.5); /* Cor de fundo */
+  font-size: 1.9rem;
+  font-weight: 100;
+  padding: 10px;
+  border-radius: 7px;
+  animation: move 2s ease-in-out infinite; /* Animação contínua */
+}
+
+input {
+  margin-bottom: 1.5rem;
+  padding: 6px;
+  border-radius: 9px;
+}
+
+button {
+  margin: 8px;
+  margin-top: 1rem;
+  padding: 9px 12px;
+  border-radius: 7px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff; // Cor do texto
+  background-color: rgba(0, 123, 255, 0.6); /* Azul com 50% de opacidade */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Efeito de sombra para profundidade
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+
+  &:hover {
+    background-color: rgba(0, 123, 255, 0.8); // Cor de fundo ao passar o mouse
+  }
+
+  &:active {
+    transform: scale(0.9); // Botões com Efeito de "pressionado"
+  }
+}
+h3 {
+  background-color: rgba(0, 123, 255, 0.5); /* Cor de fundo */
+  padding: 8px;
+  margin-top: 2rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 100;
+  animation: move 2s ease-in-out infinite; /* A mesma animação e duração do h1 */
+}
+
+/* Define a animação */
+@keyframes move {
+  0% {
+    transform: translateX(0); /* Posição inicial */
+  }
+  50% {
+    transform: translateX(25px); /* Move para a direita */
+  }
+  100% {
+    transform: translateX(0); /* Volta para a posição inicial */
+  }
+}
+
+div {
+  display: flex; // pai do .botão-resetar
+  justify-content: center; //aplico no pai e não no filho
+}
+
+.botao-resetar {
+  display: block;
+  width: 30%; /* Faz o botão ocupar toda a linha */
+  margin-top: 1.5rem; /* Espaço entre os botões e o botão de reset */
+}
